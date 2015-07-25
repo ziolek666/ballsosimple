@@ -1,5 +1,6 @@
 'use strict';
 
+import { initPopups } from './popups';
 import { prettyTime } from './util';
 
 const positions = [48, 144, 240, 336, 432];
@@ -12,7 +13,7 @@ export const Game = {
 
   create: function() {
     this.physics.startSystem(Phaser.Physics.ARCADE);
-    this.physics.arcade.gravity.y = 200;
+    this.physics.arcade.gravity.y = 20;
 
     this._balls = this.add.group();
     this._balls.createMultiple(30, 'ball', 0, false);
@@ -39,6 +40,8 @@ export const Game = {
     this._basket.body.allowGravity = false;
     this._basket.body.immovable = true;
     this._basket.body.setSize(72, 13, 0, 0);
+
+    initPopups.call(this);
 
     const keys = this.input.keyboard.createCursorKeys();
     keys.right.onUp.add(moveBasket.bind(this, 1));
