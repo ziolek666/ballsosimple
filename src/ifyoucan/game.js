@@ -72,6 +72,13 @@ function save(basket, ball) {
 function pop(ball) {
   ball.kill();
   const newHealth = this._healthbar.width - 16;
-  this.add.tween(this._healthbar).to(
+  const tween = this.add.tween(this._healthbar).to(
     {width: newHealth}, 300, Phaser.Easing.Quadratic.InOut, true, 0);
+  tween.onComplete.add(end, this);
+}
+
+function end() {
+  if (this._healthbar.width <= 0) {
+    this.state.start('gameover');
+  }
 }
