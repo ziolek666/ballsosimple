@@ -15,6 +15,22 @@ export const Game = {
     this.physics.startSystem(Phaser.Physics.ARCADE);
     this.physics.arcade.gravity.y = 20;
 
+    this._spikes = this.add.group();
+    this._spikes.createMultiple(32, 'spikes', 0, true);
+    this._spikes.callAll(
+      'animations.add', 'animations', 'shine',
+      this.math.numberArrayStep(1, 50, 0).concat(0), 15, true);
+
+    let i = 0;
+    this._spikes.forEach(
+      spike => {
+        spike.anchor.setTo(0, 1);
+        spike.x = 15 * i++;
+        spike.y = 320;
+        spike.animations.play('shine');
+        spike.animations.next(i);
+      });
+
     this._balls = this.add.group();
     this._balls.createMultiple(30, 'ball', 0, false);
 
@@ -43,7 +59,7 @@ export const Game = {
       Phaser.Timer.SECOND, addTime, this);
 
     this._basket = this.add.sprite(
-      240, this.world.bounds.bottom - 10, 'basket');
+      240, this.world.bounds.bottom - 20, 'basket');
     this._basket.anchor.set(0.5, 1);
     this._basket.currentPos = 2;
     this.physics.enable(this._basket, Phaser.Physics.ARCADE);
@@ -59,7 +75,7 @@ export const Game = {
   },
 
   update: function() {
-    this._balls.forEachAlive(ball => ball.y >= 305 && pop.call(this, ball));
+    this._balls.forEachAlive(ball => ball.y >= 290 && pop.call(this, ball));
     this.physics.arcade.collide(this._basket, this._balls, save, null, this);
   },
 
