@@ -1,5 +1,7 @@
 'use strict';
 
+import { ads } from './ads';
+
 export function initPopups() {
   this._popups = this.add.group();
 
@@ -28,9 +30,11 @@ function showPopup() {
   popup.frame = this.rnd.between(0, 1);
 
   const text = popup.children[0];
-  text.text = 'DESIRE TO CRAVE\nCall us now!';
-  text.x = 145;
-  text.y = 50;
+  const ad = ads['popup' + popup.frame];
+
+  text.text = ad.text[this.rnd.between(0, ad.text.length - 1)];
+  text.x = ad.x;
+  text.y = ad.y;
 
   this.time.events.add(Phaser.Timer.SECOND * 2, showPopup, this);
 }
