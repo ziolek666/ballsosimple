@@ -8,7 +8,7 @@ export function initPopups() {
   this._popups.createMultiple(20, 'popups', 0, false);
   this._popups.forEach(popup => makePopup.call(this, popup));
 
-  this.time.events.add(Phaser.Timer.SECOND * 4, showPopup, this);
+  this.time.events.add(Phaser.Timer.SECOND * 15, showPopup, this);
 }
 
 function makePopup(popup) {

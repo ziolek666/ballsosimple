@@ -8,7 +8,7 @@ const positions = [48, 144, 240, 336, 432];
 export const Game = {
 
   preload: function() {
-    this.stage.backgroundColor = '#007236';
+    this.stage.backgroundColor = '#d6cf9d';
   },
 
   create: function() {
@@ -17,6 +17,16 @@ export const Game = {
 
     this._balls = this.add.group();
     this._balls.createMultiple(30, 'ball', 0, false);
+
+    this._balls.callAll(
+      'animations.add', 'animations', 'drop', [0, 1], 2, true);
+    this._balls.callAll(
+      'animations.add', 'animations', 'pop', [2, 3, 4], 30, true);
+    this._balls.callAll(
+      'animations.add', 'animations', 'save', [5, 6, 7], 30, true);
+
+    this._balls.callAll('play', null, 'drop');
+
 
     spawnBall.call(this, this._balls);
     this.time.events.loop(
@@ -49,7 +59,7 @@ export const Game = {
   },
 
   update: function() {
-    this._balls.forEachAlive(ball => ball.y >= 344 && pop.call(this, ball));
+    this._balls.forEachAlive(ball => ball.y >= 305 && pop.call(this, ball));
     this.physics.arcade.collide(this._basket, this._balls, save, null, this);
   },
 
@@ -75,14 +85,15 @@ function spawnBall(group) {
   this.physics.enable(ball, Phaser.Physics.ARCADE);
   ball.anchor.set(0.5);
   ball.reset(positions[this.rnd.integerInRange(0, 4)], 0 - 24);
+  ball.animations.play('drop', null, true);
 }
 
 function save(basket, ball) {
-  ball.kill();
+  ball.animations.play('save', null, false, true);
 }
 
 function pop(ball) {
-  ball.kill();
+  ball.animations.play('pop', null, false, true);
   const newHealth = this._healthbar.width - 16;
   const tween = this.add.tween(this._healthbar).to(
     {width: newHealth}, 300, Phaser.Easing.Quadratic.InOut, true, 0);
