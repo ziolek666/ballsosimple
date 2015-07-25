@@ -15,6 +15,10 @@ export const Game = {
     this.basket = this.add.sprite(240, this.world.bounds.bottom - 10, 'basket');
     this.basket.anchor.set(0.5, 1);
     this.basket.currentPos = 2;
+    this.physics.enable(this.basket, Phaser.Physics.ARCADE);
+    this.basket.body.allowGravity = false;
+    this.basket.body.immovable = true;
+    this.basket.body.setSize(72, 13, 0, 0);
 
     this.balls = this.add.group();
     this.balls.createMultiple(30, 'ball', 0, false);
@@ -29,8 +33,13 @@ export const Game = {
   },
 
   update: function() {
-    this.balls.forEachAlive(ball =>
-      ball.y >= 344 && ball.kill());
+    this.balls.forEachAlive(ball => ball.y >= 344 && pop(ball));
+    this.physics.arcade.collide(this.basket, this.balls, save, null, this);
+  },
+
+  render: function() {
+    this.balls.forEachAlive(ball => this.game.debug.body(ball), this);
+    this.game.debug.body(this.basket);
   }
 
 };
@@ -50,4 +59,12 @@ function spawnBall(group) {
   this.physics.enable(ball, Phaser.Physics.ARCADE);
   ball.anchor.set(0.5);
   ball.reset(positions[this.rnd.integerInRange(0, 4)], 0 - 24);
+}
+
+function save(basket, ball) {
+  ball.kill();
+}
+
+function pop(ball) {
+  ball.kill();
 }
