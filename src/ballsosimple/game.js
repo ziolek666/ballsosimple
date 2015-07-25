@@ -26,9 +26,9 @@ export const Game = {
     this._healthbar.width = 160;
 
     this._timeElapsed = 0;
-    this._timeElapsedText = this.add.text(this.world.bounds.right, 0, '0:00',
-      { font: '24px Arial', fill: '#fff', align: 'center' });
-    this._timeElapsedText.anchor.setTo(1, 0);
+    this._timeElapsedText = this.add.bitmapText(
+      this.world.bounds.right - 4, 4, 'bmp1', '0:00', 16);
+    this._timeElapsedText.x -= this._timeElapsedText.width;
     this.time.events.loop(
       Phaser.Timer.SECOND, addTime, this);
 
@@ -97,5 +97,5 @@ function end() {
 
 function addTime() {
   this._timeElapsed += 1;
-  this._timeElapsedText.setText(prettyTime(this._timeElapsed));
+  this._timeElapsedText.text = prettyTime(this._timeElapsed);
 }
