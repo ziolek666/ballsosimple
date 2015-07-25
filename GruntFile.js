@@ -1,10 +1,10 @@
 module.exports = function (grunt) {
 
-  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-browserify');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -16,29 +16,34 @@ module.exports = function (grunt) {
         }
       }
     },
+    browserify: {
+      dist: {
+        files: {
+          'deploy/js/ifyoucan.js': 'src/ifyoucan/main.js',
+        },
+        options: {
+          transform: [['babelify', { optional: ['runtime'] }]]
+        }
+      }
+    },
     concat: {
       dist: {
-        src: [
-          "src/lib/**/*.js",
-          "src/game/**/*.js"
-        ],
-        dest: 'deploy/js/<%= pkg.name %>.js'
+        src: 'src/vendor/**/*.js',
+        dest: 'deploy/js/vendor.js'
       }
     },
     watch: {
       files: 'src/**/*.js',
-      tasks: ['concat']
+      tasks: ['browserify']
     },
     open: {
       dev: {
         path: 'http://localhost:8080/index.html'
       }
     },
-    clean: [
-      'deploy/js/'
-    ]
   });
 
-  grunt.registerTask('default', ['concat', 'connect', 'open', 'watch']);
+  grunt.registerTask('default',
+    ['concat', 'browserify', 'connect', 'open', 'watch']);
 
 };
