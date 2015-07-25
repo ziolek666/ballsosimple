@@ -8,7 +8,9 @@ export function initPopups() {
   this._popups.createMultiple(20, 'popups', 0, false);
   this._popups.forEach(popup => makePopup.call(this, popup));
 
-  this.time.events.add(Phaser.Timer.SECOND * 15, showPopup, this);
+  this._adIndex = this.rnd.between(0, 17);
+
+  this.time.events.add(Phaser.Timer.SECOND * 10, showPopup, this);
 }
 
 function makePopup(popup) {
@@ -27,7 +29,7 @@ function showPopup() {
   popup.reset(
     this.rnd.between(0, 100),
     this.rnd.between(0, 200));
-  popup.frame = this.rnd.between(0, 1);
+  popup.frame = this._adIndex++ % 17;
 
   const text = popup.children[0];
   const ad = ads['popup' + popup.frame];
@@ -36,5 +38,5 @@ function showPopup() {
   text.x = ad.x;
   text.y = ad.y;
 
-  this.time.events.add(Phaser.Timer.SECOND * 2, showPopup, this);
+  this.time.events.add(Phaser.Timer.SECOND * 3, showPopup, this);
 }
