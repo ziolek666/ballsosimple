@@ -74,5 +74,5 @@ function pop(ball) {
   ball.kill();
   const newHealth = this._healthbar.width - 16;
   this.add.tween(this._healthbar).to(
-    {width: newHealth}, 300, Phaser.Easing.Linear.None, true, 0);
+    {width: newHealth}, 300, Phaser.Easing.Quadratic.InOut, true, 0);
 }
