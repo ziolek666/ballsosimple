@@ -23,7 +23,7 @@ module.exports = function (grunt) {
     browserify: {
       dist: {
         files: {
-          'deploy/js/ifyoucan.js': 'src/ifyoucan/main.js',
+          'deploy/js/ballsosimple.js': 'src/ballsosimple/main.js',
         },
         options: {
           transform: [['babelify', { optional: ['runtime'] }]]
@@ -51,7 +51,7 @@ module.exports = function (grunt) {
 
     jshint: {
       src: [
-        'src/ifyoucan/**/*.js',
+        'src/ballsosimple/**/*.js',
       ],
       options: {
         jshintrc: 'src/.jshintrc',

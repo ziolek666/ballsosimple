@@ -1,12 +1,12 @@
 {
-  "name": "ifyoucan",
+  "name": "ballsosimple",
   "version": "0.0.1",
-  "description": "…if you can",
+  "description": "Ball So Simple",
   "main": "deploy/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "http://github.com/htsz/icanwin",
+  "repository": "http://github.com/htsz/ballsosimple",
   "contributors": [
     "Michał Budzyński",
     "Antoni Korzeniowski",
