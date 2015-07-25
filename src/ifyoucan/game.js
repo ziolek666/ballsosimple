@@ -12,16 +12,6 @@ export const Game = {
     this.physics.startSystem(Phaser.Physics.ARCADE);
     this.physics.arcade.gravity.y = 20;
 
-    this._basket = this.add.sprite(
-      240, this.world.bounds.bottom - 10, 'basket');
-    this._basket.anchor.set(0.5, 1);
-    this._basket.currentPos = 2;
-    this.physics.enable(this._basket, Phaser.Physics.ARCADE);
-    this._basket.body.allowGravity = false;
-    this._basket.body.immovable = true;
-    this._basket.body.setSize(72, 13, 0, 0);
-
-
     this._balls = this.add.group();
     this._balls.createMultiple(30, 'ball', 0, false);
 
@@ -31,6 +21,15 @@ export const Game = {
 
     this._healthbar = this.add.sprite(2, 2, 'healthbar');
     this._healthbar.width = 160;
+
+    this._basket = this.add.sprite(
+      240, this.world.bounds.bottom - 10, 'basket');
+    this._basket.anchor.set(0.5, 1);
+    this._basket.currentPos = 2;
+    this.physics.enable(this._basket, Phaser.Physics.ARCADE);
+    this._basket.body.allowGravity = false;
+    this._basket.body.immovable = true;
+    this._basket.body.setSize(72, 13, 0, 0);
 
     const keys = this.input.keyboard.createCursorKeys();
     keys.right.onUp.add(moveBasket.bind(this, 1));
