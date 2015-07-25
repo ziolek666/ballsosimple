@@ -12,7 +12,7 @@ export function initPopups() {
   let i = this.rnd.between(0, NUM_ADS);
   this._popups.forEach(popup => makePopup.call(this, popup, i++ % NUM_ADS));
 
-  this.time.events.add(Phaser.Timer.SECOND * 1, showPopup, this);
+  this.time.events.add(Phaser.Timer.SECOND * 15, showPopup, this);
 }
 
 function makePopup(popup, i) {
@@ -36,5 +36,5 @@ function showPopup() {
     this.rnd.between(0, 200));
   popup.animations.play('idle');
 
-  this.time.events.add(Phaser.Timer.SECOND * 1, showPopup, this);
+  this.time.events.add(Phaser.Timer.SECOND * 3, showPopup, this);
 }
