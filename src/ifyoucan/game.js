@@ -22,6 +22,13 @@ export const Game = {
     this._healthbar = this.add.sprite(2, 2, 'healthbar');
     this._healthbar.width = 160;
 
+    this._timeElapsed = 0;
+    this._timeElapsedText = this.add.text(this.world.bounds.right, 0, '0:00',
+      { font: '24px Arial', fill: '#fff', align: 'center' });
+    this._timeElapsedText.anchor.setTo(1, 0);
+    this.time.events.loop(
+      Phaser.Timer.SECOND, addTime, this);
+
     this._basket = this.add.sprite(
       240, this.world.bounds.bottom - 10, 'basket');
     this._basket.anchor.set(0.5, 1);
@@ -81,4 +88,16 @@ function end() {
   if (this._healthbar.width <= 0) {
     this.state.start('gameover');
   }
+}
+
+function addTime() {
+  this._timeElapsed += 1;
+
+  const minutes = Math.floor(this._timeElapsed / 60);
+  const seconds = this._timeElapsed % 60;
+  const text = seconds < 10 ?
+    minutes + ':0' + seconds :
+    minutes + ':' + seconds;
+
+  this._timeElapsedText.setText(text);
 }
