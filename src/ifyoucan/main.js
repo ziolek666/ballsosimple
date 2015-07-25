@@ -1,5 +1,7 @@
 'use strict';
 
-import { state } from './state';
+import { Boot } from './boot';
 
-window.game = new Phaser.Game(480, 320, Phaser.AUTO, 'game', state);
+const game = new Phaser.Game(480, 320, Phaser.AUTO, 'game');
+game.state.add('boot', Boot);
+game.state.start('boot');
