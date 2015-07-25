@@ -20,7 +20,9 @@ export function showPopup() {
     return;
   }
 
-  popup.reset(20, 60);
+  popup.reset(
+    this.rnd.between(20, 100),
+    this.rnd.between(20, 200));
 
   this.time.events.add(Phaser.Timer.SECOND * 2, showPopup, this);
 }
