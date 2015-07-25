@@ -5,9 +5,12 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-open');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
 
   grunt.initConfig({
+
     pkg: grunt.file.readJSON('package.json'),
+
     connect: {
       server: {
         options: {
@@ -16,6 +19,7 @@ module.exports = function (grunt) {
         }
       }
     },
+
     browserify: {
       dist: {
         files: {
@@ -26,20 +30,32 @@ module.exports = function (grunt) {
         }
       }
     },
+
     concat: {
       dist: {
         src: 'src/vendor/**/*.js',
         dest: 'deploy/js/vendor.js'
       }
     },
+
     watch: {
       files: 'src/**/*.js',
       tasks: ['browserify']
     },
+
     open: {
       dev: {
         path: 'http://localhost:8080/index.html'
       }
+    },
+
+    jshint: {
+      src: [
+        'src/ifyoucan/**/*.js',
+      ],
+      options: {
+        jshintrc: 'src/.jshintrc',
+      },
     },
   });
 

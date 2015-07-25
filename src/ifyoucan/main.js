@@ -1,13 +1,5 @@
-var state = {
-  init: function() {
-    const text = game.add.text(
-      this.world.centerX, this.world.centerY, '…if you can',
-      { font: "24px Arial", fill: "#fff", align: "center" });
-    text.anchor.setTo(0.5, 0.5);
-  },
-  preload: () => undefined,
-  create: () => undefined,
-  update: () => undefined,
-};
+'use strict';
 
-var game = new Phaser.Game(480, 320, Phaser.AUTO, 'game', state);
+import { state } from './state';
+
+window.game = new Phaser.Game(480, 320, Phaser.AUTO, 'game', state);
