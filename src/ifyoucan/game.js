@@ -1,5 +1,7 @@
 'use strict';
 
+import { prettyTime } from './util';
+
 const positions = [48, 144, 240, 336, 432];
 
 export const Game = {
@@ -10,7 +12,7 @@ export const Game = {
 
   create: function() {
     this.physics.startSystem(Phaser.Physics.ARCADE);
-    this.physics.arcade.gravity.y = 20;
+    this.physics.arcade.gravity.y = 200;
 
     this._balls = this.add.group();
     this._balls.createMultiple(30, 'ball', 0, false);
@@ -86,18 +88,11 @@ function pop(ball) {
 
 function end() {
   if (this._healthbar.width <= 0) {
-    this.state.start('gameover');
+    this.state.start('gameover', true, true, this._timeElapsed);
   }
 }
 
 function addTime() {
   this._timeElapsed += 1;
-
-  const minutes = Math.floor(this._timeElapsed / 60);
-  const seconds = this._timeElapsed % 60;
-  const text = seconds < 10 ?
-    minutes + ':0' + seconds :
-    minutes + ':' + seconds;
-
-  this._timeElapsedText.setText(text);
+  this._timeElapsedText.setText(prettyTime(this._timeElapsed));
 }
