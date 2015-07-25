@@ -20,6 +20,7 @@ export const Game = {
     this.basket.body.immovable = true;
     this.basket.body.setSize(72, 13, 0, 0);
 
+
     this.balls = this.add.group();
     this.balls.createMultiple(30, 'ball', 0, false);
 
@@ -27,19 +28,22 @@ export const Game = {
     this.time.events.loop(
       Phaser.Timer.SECOND * 2, spawnBall.bind(this, this.balls));
 
+    this.healthbar = this.add.sprite(2, 2, 'healthbar');
+    this.healthbar.width = 160;
+
     const keys = this.input.keyboard.createCursorKeys();
     keys.right.onUp.add(moveBasket.bind(this, 1));
     keys.left.onUp.add(moveBasket.bind(this, -1));
   },
 
   update: function() {
-    this.balls.forEachAlive(ball => ball.y >= 344 && pop(ball));
+    this.balls.forEachAlive(ball => ball.y >= 344 && pop.call(this, ball));
     this.physics.arcade.collide(this.basket, this.balls, save, null, this);
   },
 
   render: function() {
-    this.balls.forEachAlive(ball => this.game.debug.body(ball), this);
-    this.game.debug.body(this.basket);
+    //this.balls.forEachAlive(ball => this.game.debug.body(ball), this);
+    //this.game.debug.body(this.basket);
   }
 
 };
@@ -67,4 +71,7 @@ function save(basket, ball) {
 
 function pop(ball) {
   ball.kill();
+  const newHealth = this.healthbar.width - 16;
+  this.add.tween(this.healthbar).to(
+    {width: newHealth}, 300, Phaser.Easing.Linear.None, true, 0);
 }
