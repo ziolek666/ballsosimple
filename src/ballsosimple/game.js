@@ -70,9 +70,9 @@ export const Game = {
 
 
     const howto = drawText.call(this,
-      'Save the falling balls\nfrom the spikes!', 32);
+      'Don\'t let the falling balls\ntouch the spikes below!', 32);
     this.time.events.add(
-      Phaser.Timer.SECOND * 3,
+      Phaser.Timer.SECOND * 4,
       () => howto.destroy());
 
     initPopups.call(this);
