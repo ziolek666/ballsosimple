@@ -1,5 +1,6 @@
 'use strict';
 
+import { HEALTH } from './config';
 import { initPopups } from './popups';
 import { prettyTime, drawText } from './util';
 
@@ -50,7 +51,7 @@ export const Game = {
 
     this._healthbox = this.add.sprite(3, 3, 'border');
     this._healthbar = this.add.sprite(4, 4, 'healthbar');
-    this._healthbar.width = 160;
+    this._healthbar.width = HEALTH;
 
     this._timeElapsed = 0;
     this._timeElapsedText = this.add.bitmapText(
