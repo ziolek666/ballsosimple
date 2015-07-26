@@ -15,7 +15,7 @@ module.exports = function (grunt) {
       server: {
         options: {
           port: 8080,
-          base: './deploy'
+          base: './play'
         }
       }
     },
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
     browserify: {
       dist: {
         files: {
-          'deploy/js/ballsosimple.js': 'src/ballsosimple/main.js',
+          'play/js/ballsosimple.js': 'src/ballsosimple/main.js',
         },
         options: {
           transform: [['babelify']]
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
     concat: {
       dist: {
         src: 'src/vendor/**/*.js',
-        dest: 'deploy/js/vendor.js'
+        dest: 'play/js/vendor.js'
       }
     },
 

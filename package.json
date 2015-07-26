@@ -2,7 +2,7 @@
   "name": "ballsosimple",
   "version": "0.0.1",
   "description": "Ball So Simple",
-  "main": "deploy/index.html",
+  "main": "play/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
