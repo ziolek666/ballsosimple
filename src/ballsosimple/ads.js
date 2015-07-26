@@ -1,5 +1,7 @@
 'use strict';
 
+export const NUM_ADS = 20;
+
 export const ads = { 
   popup0: {
     x: 145,
@@ -195,6 +197,16 @@ export const ads = {
     x: 145,
     y: 50,
     frames: [26],
+    fps: 1,
+    text: [
+      'DESIRE TO CRAVE\nCall us now!',
+      'Lose 20 lbs\nin 2 hours!',
+    ]
+  },
+  popup20: {
+    x: 145,
+    y: 50,
+    frames: [27],
     fps: 1,
     text: [
       'DESIRE TO CRAVE\nCall us now!',

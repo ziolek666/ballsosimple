@@ -1,8 +1,6 @@
 'use strict';
 
-import { ads } from './ads';
-
-const NUM_ADS = 19;
+import { ads, NUM_ADS } from './ads';
 
 export function initPopups() {
   this._popups = this.add.group();
