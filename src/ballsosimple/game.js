@@ -48,7 +48,8 @@ export const Game = {
     this.time.events.loop(
       Phaser.Timer.SECOND * 2, spawnBall.bind(this, this._balls));
 
-    this._healthbar = this.add.sprite(2, 2, 'healthbar');
+    this._healthbox = this.add.sprite(3, 3, 'healthbox');
+    this._healthbar = this.add.sprite(4, 4, 'healthbar');
     this._healthbar.width = 160;
 
     this._timeElapsed = 0;

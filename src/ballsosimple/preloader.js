@@ -4,6 +4,7 @@ export const Preloader = {
 
   preload: function() {
     this.load.image('basket', 'assets/basket.png');
+    this.load.image('healthbox', 'assets/healthbox.png');
     this.load.image('healthbar', 'assets/healthbar.png');
     this.load.image('close1', 'assets/close1.png');
     this.load.spritesheet('spikes', 'assets/spikes.png', 15, 15);
