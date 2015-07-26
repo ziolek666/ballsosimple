@@ -67,6 +67,9 @@ export const Game = {
     this._basket.body.allowGravity = false;
     this._basket.body.immovable = true;
     this._basket.body.setSize(72, 13, 0, 0);
+    this.soundGameplay = this.add.audio('audio-gameplay',1,true);
+    this.soundGameplay.volume = 0.5;
+    this.soundGameplay.play('',0,1,true);
 
 
     const howto = drawText.call(this,

@@ -26,6 +26,8 @@ export const Preloader = {
     this.load.image('menu-cover', 'assets/covers/menu.png');
     this.load.image('menu-start', 'assets/covers/start.png');
     this.load.spritesheet('menu-sound', 'assets/covers/sound.png', 86, 37);
+    this.load.audio('audio-intro', ['sfx/intro.ogg','sfx/intro.mp3','sfx/intro.m4a']);
+    this.load.audio('audio-gameplay', ['sfx/gameplay.ogg','sfx/gameplay.mp3','sfx/gameplay.m4a']);
   },
 
   create: function() {
