@@ -80,7 +80,7 @@ export const ads = {
     fps: 1,
     text: [
       'Happy love together. Buy friends!',
-      'You wouldn't believe the smell',
+      'You wouldn\'t believe the smell',
     ]
   },
   popup8: {
@@ -119,7 +119,7 @@ export const ads = {
     frames: [11],
     fps: 1,
     text: [
-      'Scientists couldn't believe it!,
+      'Scientists couldn\'t believe it!',
       'Donate sperm to your local vets!',
     ]
   },
