@@ -1,7 +1,5 @@
 'use strict';
 
-import { prettyTime } from './util';
-
 export const GameOver = {
 
   init: function(time) {
@@ -11,10 +9,16 @@ export const GameOver = {
   create: function() {
     const text = this.add.bitmapText(
       this.world.centerX, this.world.centerY, 'bmp1',
-      'Can it be all so simple?\nYou survived ' +
-        prettyTime(this._score) + ' minutes.', 16);
+      'G A M E\nO V E R', 32);
+    text.align = 'center';
     text.x -= text.width / 2;
     text.y -= text.height / 2;
+
+    const showScore = () =>
+      this.game.state.start('score', true, true, this._score);
+
+    this.input.onUp.add(showScore);
+    this.input.keyboard.onUpCallback = showScore;
   }
 
 };
