@@ -54,7 +54,7 @@ export const Game = {
 
     this._timeElapsed = 0;
     this._timeElapsedText = this.add.bitmapText(
-      this.world.bounds.right - 4, 4, 'bmp1', '0:00', 16);
+      this.world.bounds.right - 3, 3, 'bmp1', '0:00', 16);
     this._timeElapsedText.x -= this._timeElapsedText.width;
     this.time.events.loop(
       Phaser.Timer.SECOND, addTime, this);

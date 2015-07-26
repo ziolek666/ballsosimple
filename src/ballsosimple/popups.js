@@ -17,7 +17,7 @@ function makePopup(popup, i) {
   const ad = ads['popup' + i];
   const text = this.add.bitmapText(
     ad.x, ad.y, 'bmp1', ad.text[this.rnd.between(0, ad.text.length - 1)], 32);
-  const button = this.add.button(6, 6, 'close1', () => popup.kill());
+  const button = this.add.button(2, 2, 'close1', () => popup.kill());
   popup.addChild(text);
   popup.addChild(button);
   popup.animations.add('idle', ad.frames, ad.fps, true);
@@ -32,7 +32,7 @@ function showPopup() {
 
   popup.reset(
     this.rnd.between(0, 100),
-    this.rnd.between(0, 200));
+    this.rnd.between(40, 160));
   popup.animations.play('idle');
   popup.bringToTop();
 

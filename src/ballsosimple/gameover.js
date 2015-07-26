@@ -11,7 +11,8 @@ export const GameOver = {
   create: function() {
     const text = this.add.bitmapText(
       this.world.centerX, this.world.centerY, 'bmp1',
-      'Can it be all so simple?\nYou survived: ' + prettyTime(this._score), 16);
+      'Can it be all so simple?\nYou survived ' +
+        prettyTime(this._score) + ' minutes.', 16);
     text.x -= text.width / 2;
     text.y -= text.height / 2;
   }
