@@ -29,7 +29,7 @@ export const ads = {
     frames: [2],
     fps: 1,
     text: [
-      'Have a \nbreak \nhave a \nfamily!',
+      'BREED \na family!',
       'GO CRACK \nA FAMILY!',
     ]
   },
@@ -40,7 +40,7 @@ export const ads = {
     fps: 1,
     text: [
       'Ball \nis organic.',
-      'KEEP \nIT WILD, \nCATCH!',
+      'KEEP \nIT WILD!',
     ]
   },
   popup4: {
@@ -90,7 +90,7 @@ export const ads = {
     fps: 1,
     text: [
       'NEW ALBUM \nIN YOUR MOM!',
-      'Selena \nsings \nfor slaves. \nBUY!',
+      'Selena \nsings \nfor slaves.BUY!',
     ]
   },
   popup9: {
@@ -99,7 +99,7 @@ export const ads = {
     frames: [9],
     fps: 1,
     text: [
-      'GET RICH \nOR DIE, \nDIE, \nDIE!',
+      'GET RICH \nOR DIE!',
       'I buy it \nfor a dollar',
     ]
   },
@@ -120,7 +120,7 @@ export const ads = {
     fps: 1,
     text: [
       'Scientists \ncouldnt \nbelieve it!',
-      'Donate \nsperm to \nyour local \nvets!',
+      'Donate \nsperm to \nlocal vets!',
     ]
   },
   popup12: {
@@ -149,8 +149,8 @@ export const ads = {
     frames: [18],
     fps: 1,
     text: [
-      'Premium \nfuneral \nservices.',
-      'CONGRATULATIONS !!! \nYou WON NOTHING!',
+      '  Premium \n  funeral \n  services.',
+      '  You WON \nNOTHING!',
     ]
   },
   popup15: {
@@ -159,8 +159,8 @@ export const ads = {
     frames: [19, 20],
     fps: 10,
     text: [
-      'Get out \nof town!',
-      'Run away!',
+      ' Get out \n of town!',
+      ' Run away!',
     ]
   },
   popup16: {
@@ -169,8 +169,8 @@ export const ads = {
     frames: [21],
     fps: 1,
     text: [
-      'SEA \nSMELLS.',
-      'Sail like \nKevin C.',
+      ' SEA \n SMELLS.',
+      ' Sail like \n Kevin C.',
     ]
   },
   popup17: {
@@ -194,23 +194,23 @@ export const ads = {
     ]
   },
   popup19: {
-    x: 60,
-    y: 100,
+    x: 103,
+    y: 50,
     frames: [26],
     fps: 1,
     text: [
-      'Your body has \nbeen infected. \nClick OK \nto deal with it.',
-      'Brain.exe has \nstopped \nworking! \nEat quickly!',
+      ' Your body has \n been infected,
+      ' Brain.exe has \n stopped working!',
     ]
   },
   popup20: {
-    x: 60,
-    y: 100,
+    x: 103,
+    y: 50,
     frames: [27],
     fps: 1,
     text: [
-      'The relocation \nof the walrus \nresulted in \ncritical pelvis \nshutdown',
-      'THIS IS \nA \nMUDHAPHUKKYN \nSTICKUP!',
+      ' The relocation \nof the walrus \nshutdown',
+      ' THIS IS \nA STICKUP!',
     ]
   },
 };
