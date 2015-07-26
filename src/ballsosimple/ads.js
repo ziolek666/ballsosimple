@@ -199,7 +199,7 @@ export const ads = {
     frames: [26],
     fps: 1,
     text: [
-      ' Your body has \n been infected,
+      ' Your body has \n been infected.',
       ' Brain.exe has \n stopped working!',
     ]
   },
