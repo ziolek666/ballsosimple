@@ -3,8 +3,8 @@
 export const Boot = {
 
   preload: function() {
-    //this.load.image('preloaderBg', 'img/loading-bg.png');
-    //this.load.image('preloaderBar', 'img/loading-bar.png');
+    this.load.image('border', 'assets/border.png');
+    this.load.image('progressbar', 'assets/progressbar.png');
   },
 
   create: function() {
