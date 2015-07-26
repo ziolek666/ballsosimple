@@ -26,7 +26,7 @@ module.exports = function (grunt) {
           'deploy/js/ballsosimple.js': 'src/ballsosimple/main.js',
         },
         options: {
-          transform: [['babelify', { optional: ['runtime'] }]]
+          transform: [['babelify']]
         }
       }
     },

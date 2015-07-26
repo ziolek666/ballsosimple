@@ -1,9 +1,8 @@
 'use strict';
 
-export const NUM_ADS = 20;
-
 export const ads = { 
   popup0: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [0],
@@ -14,6 +13,7 @@ export const ads = {
     ]
   },
   popup1: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [1],
@@ -24,6 +24,7 @@ export const ads = {
     ]
   },
   popup2: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [2],
@@ -34,6 +35,7 @@ export const ads = {
     ]
   },
   popup3: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [3],
@@ -44,6 +46,7 @@ export const ads = {
     ]
   },
   popup4: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [4],
@@ -54,6 +57,7 @@ export const ads = {
     ]
   },
   popup5: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 16,
     y: 46,
     frames: [5],
@@ -64,6 +68,7 @@ export const ads = {
     ]
   },
   popup6: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 16,
     y: 46,
     frames: [6],
@@ -74,6 +79,7 @@ export const ads = {
     ]
   },
   popup7: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [7],
@@ -84,6 +90,7 @@ export const ads = {
     ]
   },
   popup8: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [8],
@@ -94,6 +101,7 @@ export const ads = {
     ]
   },
   popup9: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [9],
@@ -104,6 +112,7 @@ export const ads = {
     ]
   },
   popup10: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [10],
@@ -114,6 +123,7 @@ export const ads = {
     ]
   },
   popup11: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 16,
     y: 46,
     frames: [11],
@@ -124,6 +134,7 @@ export const ads = {
     ]
   },
   popup12: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 16,
     y: 46,
     frames: [12],
@@ -134,6 +145,7 @@ export const ads = {
     ]
   },
   popup13: {
+    but: { x: -2, y: -4, name: 'close2' },
     x: 165,
     y: 50,
     frames: [13, 14, 15, 16, 17],
@@ -144,6 +156,7 @@ export const ads = {
     ]
   },
   popup14: {
+    but: { x: -2, y: -4, name: 'close2' },
     x: 16,
     y: 46,
     frames: [18],
@@ -154,6 +167,7 @@ export const ads = {
     ]
   },
   popup15: {
+    but: { x: -2, y: -4, name: 'close2' },
     x: 165,
     y: 100,
     frames: [19, 20],
@@ -164,6 +178,7 @@ export const ads = {
     ]
   },
   popup16: {
+    but: { x: -2, y: -4, name: 'close2' },
     x: 16,
     y: 46,
     frames: [21],
@@ -174,7 +189,8 @@ export const ads = {
     ]
   },
   popup17: {
-    x: 145,
+    but: { x: 2, y: 2, name: 'close1' },
+    x: 175,
     y: 80,
     frames: [22, 23],
     fps: 10,
@@ -184,6 +200,7 @@ export const ads = {
     ]
   },
   popup18: {
+    but: { x: 2, y: 2, name: 'close1' },
     x: 60,
     y: 100,
     frames: [24, 25],
@@ -194,6 +211,7 @@ export const ads = {
     ]
   },
   popup19: {
+    but: { x: 317, y: -8, name: 'close3' },
     x: 103,
     y: 50,
     frames: [26],
@@ -204,6 +222,7 @@ export const ads = {
     ]
   },
   popup20: {
+    but: { x: 317, y: -8, name: 'close3' },
     x: 103,
     y: 50,
     frames: [27],
@@ -214,3 +233,5 @@ export const ads = {
     ]
   },
 };
+
+export const NUM_ADS = Object.keys(ads).length;
