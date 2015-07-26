@@ -1,7 +1,7 @@
 'use strict';
 
 import { initPopups } from './popups';
-import { prettyTime } from './util';
+import { prettyTime, drawText } from './util';
 
 const positions = [48, 144, 240, 336, 432];
 
@@ -67,6 +67,13 @@ export const Game = {
     this._basket.body.allowGravity = false;
     this._basket.body.immovable = true;
     this._basket.body.setSize(72, 13, 0, 0);
+
+
+    const howto = drawText.call(this,
+      'Save the falling balls\nfrom the spikes!', 32);
+    this.time.events.add(
+      Phaser.Timer.SECOND * 3,
+      () => howto.destroy());
 
     initPopups.call(this);
 

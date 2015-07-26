@@ -1,6 +1,6 @@
 'use strict';
 
-import { prettyTime } from './util';
+import { prettyTime, drawText } from './util';
 
 export const Score = {
 
@@ -9,13 +9,9 @@ export const Score = {
   },
 
   create: function() {
-    const text = this.add.bitmapText(
-      this.world.centerX, this.world.centerY, 'bmp1',
+    drawText.call(this,
       'Can it be all so simple?\nYou survived ' +
-        prettyTime(this._score) + ' minutes.', 16);
-    text.align = 'center';
-    text.x -= text.width / 2;
-    text.y -= text.height / 2;
+      prettyTime(this._score) + ' minutes.', 32);
   }
 
 };

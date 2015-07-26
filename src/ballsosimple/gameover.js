@@ -1,5 +1,7 @@
 'use strict';
 
+import { drawText } from './util';
+
 export const GameOver = {
 
   init: function(time) {
@@ -7,16 +9,10 @@ export const GameOver = {
   },
 
   create: function() {
-    const text = this.add.bitmapText(
-      this.world.centerX, this.world.centerY, 'bmp1',
-      'G A M E\nO V E R', 32);
-    text.align = 'center';
-    text.x -= text.width / 2;
-    text.y -= text.height / 2;
+    drawText.call(this, 'G A M E\nO V E R', 32);
 
     const showScore = () =>
       this.game.state.start('score', true, true, this._score);
-
     this.input.onUp.add(showScore);
     this.input.keyboard.onUpCallback = showScore;
   }
