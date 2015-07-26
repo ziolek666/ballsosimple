@@ -2,7 +2,7 @@
 
 export const ads = { 
   popup0: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [0],
@@ -13,7 +13,7 @@ export const ads = {
     ]
   },
   popup1: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [1],
@@ -24,7 +24,7 @@ export const ads = {
     ]
   },
   popup2: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [2],
@@ -35,7 +35,7 @@ export const ads = {
     ]
   },
   popup3: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [3],
@@ -46,7 +46,7 @@ export const ads = {
     ]
   },
   popup4: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [4],
@@ -57,7 +57,7 @@ export const ads = {
     ]
   },
   popup5: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 16,
     y: 46,
     frames: [5],
@@ -68,7 +68,7 @@ export const ads = {
     ]
   },
   popup6: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 16,
     y: 46,
     frames: [6],
@@ -79,7 +79,7 @@ export const ads = {
     ]
   },
   popup7: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [7],
@@ -90,7 +90,7 @@ export const ads = {
     ]
   },
   popup8: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [8],
@@ -101,7 +101,7 @@ export const ads = {
     ]
   },
   popup9: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [9],
@@ -112,7 +112,7 @@ export const ads = {
     ]
   },
   popup10: {
-    but: { x: 2, y: 2, name: 'close1' },
+    but: { x: 326, y: 2, name: 'close1' },
     x: 165,
     y: 50,
     frames: [10],
